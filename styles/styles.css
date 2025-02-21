@@ -13,7 +13,6 @@
 }
 
 /* Header - Navigation */
-
 .navigation {
     height: 65px;
     width: 100%;
@@ -21,6 +20,12 @@
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid black;
+    background-color: var(--clr-light);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
 h1 {
@@ -75,6 +80,7 @@ nav li > a:hover {
     width: auto;
 }
 
+/* MediaQ for responsive navigation bar */
 @media (max-width: 768px) {
     * {
         width: 100%;
@@ -97,6 +103,7 @@ nav li > a:hover {
     nav ul {
         flex-direction: column;
         display: none;
+        background-color: lightgray;
     }
 
     nav ul.show {
@@ -105,5 +112,68 @@ nav li > a:hover {
 
     .menu {
         display: flex;
+    }
+}
+
+/* Header - Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: whitesmoke;
+}
+
+h2 {
+    font-size: clamp(1.8rem, 5vw, 3rem);
+}
+
+.wrapper > p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.wrapper {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    text-align: center;
+}
+
+.cta {
+    border: none;
+    width: 150px;
+}
+
+.cta a:hover {
+    background-color: black;
+    color: var(--clr-light);
+}
+
+.cta > a {
+    padding: 15px 20px;
+    color: var(--clr-def);
+    text-decoration: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    background-color: gainsboro;
+}
+    
+@media (max-width: 768px) {
+    .hero {
+        min-height: 70vh;
+        text-align: center;
+    }
+
+    .cta {
+        width: 150px; /* To adjust the width of the button */
     }
 }
