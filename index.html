@@ -25,7 +25,28 @@
             <button class="menu" aria-label="Toggle navigation">☰</button>
         </div>
     </header>
+
+    <!--Toggle menu function-->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const menuButton = document.querySelector('.menu');
+            const navList = document.querySelector('nav ul');
+            const menuLinks = document.querySelectorAll('nav ul li a');
+        
+            menuButton.addEventListener('click', () => {
+                navList.classList.toggle('show');
+            });
+        
+            // Close menu when clicking a menu link
+            menuLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    navList.classList.remove('show');
+                });
+            });
+        });
+    </script>
+    
 </body>
 </html>
 
-<!--Commit: Recreating the code! for navigation-->
+<!--Commit: Modified navigation, plain navigation layout, menu toggle is functional-->
